@@ -1,6 +1,6 @@
 {
   "name": "vue-bulma-slider",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "description": "Slider Component for Vue Bulma",
   "main": "src/Slider.vue",
   "devDependencies": {
@@ -8,7 +8,6 @@
     "vue": "^1.0.26"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": "git+https://github.com/vue-bulma/slider.git",
   "keywords": [
