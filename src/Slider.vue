@@ -1,5 +1,5 @@
 <template>
-  <input class="slider" :class="{ [`is-${type}`]: type, [`is-${size}`]: size, 'is-fullwidth': isFullwidth }" type="range" :min="min" v-model="value" :max="max" :step="step" :name="name" :orient="vertical && 'vertical'" :disabled="disabled" number>
+  <input :class="classObject" type="range" :min="min" v-model="realValue" :max="max" :step="step" :name="name" :orient="vertical && 'vertical'" :disabled="disabled" number>
 </template>
 
 <script>
@@ -27,14 +27,24 @@ export default {
     vertical: Boolean
   },
 
-  ready () {
+  data () {
+    return {
+      realValue: this.value
+    }
+  },
+
+  mounted () {
     this.$el.style.setProperty('--low', this.low)
     this.$el.style.setProperty('--high', this.high)
   },
 
   watch: {
-    value (val) {
+    realValue (val) {
       this.$el.style.setProperty('--high', this.high)
+      this.$emit('change', val)
+    },
+    value (val) {
+      this.realValue = val
     }
   },
 
@@ -43,7 +53,16 @@ export default {
       return '0%'
     },
     high () {
-      return this.value / this.max * 100 + '%'
+      return this.realValue / this.max * 100 + '%'
+    },
+    classObject () {
+      const { type, size, isFullwidth } = this
+      return {
+        slider: true,
+        [`is-${type}`]: type,
+        [`is-${size}`]: size,
+        'is-fullwidth': isFullwidth
+      }
     }
   }
 }
