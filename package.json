@@ -1,6 +1,6 @@
 {
   "name": "vue-bulma-slider",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slider Component for Vue Bulma",
   "main": "src/Slider.vue",
   "peerDependencies": {
