@@ -95,6 +95,7 @@ export default {
 
 <style lang="scss">
 @import '~bulma/sass/utilities/initial-variables';
+@import '~bulma/sass/utilities/derived-variables';
 
 input[type=range].slider {
   $radius: 290486px;
