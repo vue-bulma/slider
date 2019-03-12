@@ -4,7 +4,7 @@
   "description": "Slider Component for Vue Bulma",
   "main": "src/Slider.vue",
   "peerDependencies": {
-    "bulma": ">=0.2",
+    "bulma": ">=0.4.1",
     "vue": ">=2"
   },
   "repository": "vue-bulma/slider",
